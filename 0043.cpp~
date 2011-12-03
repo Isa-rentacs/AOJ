@@ -1,0 +1,16 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main(void){
+  map<int,int> hand;
+  char tmp;
+
+  for(int i=0;i<13;i++){
+    cin >> tmp;
+    hand[tmp - '0']++;
+  }
+
+  
+}

@@ -1,0 +1,34 @@
+#include <iostream>
+#include <map>
+#include <cstring>
+#include <string>
+
+using namespace std;
+
+int main(void){
+  bool lastmonth[1000];
+  bool thismonth[1000];
+  map<int,int> times;
+  int num, val;
+  string str;
+
+  memset(lastmonth, false, sizeof(lastmonth));
+  while(getline(cin, str)){
+    if(str.size() == 0) break;
+    istringstream iss(str);
+    iss >> num;
+    iss.ignore();
+    iss >> val;
+    lastmonth[num] = true;
+    times[num]++;
+  }
+
+  while(getline(cin,str)){
+    if(str.size() == 0) break;
+    istringstream iss(str);
+    iss >> num;
+    iss.ignore();
+    iss >> val;
+    
+  }
+}

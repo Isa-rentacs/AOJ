@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+  double ax[4],ay[4], bx[4],by[4];
+
+  while(cin >> ax[0] >> ay[0]>> ax[1] >> ay[1] >> bx[0] >> bx[0] >> bx[1] >> by[1]){
+    ax[2] = ax[0];
+    ay[2] = ay[1];
+    ax[3] = ax[1];
+    ay[3] = ay[0];
+    bx[2] = bx[0];
+    by[2] = by[1];
+    bx[3] = bx[1];
+    by[3] = by[0];
+  }
+}

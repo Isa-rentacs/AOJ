@@ -1,0 +1,16 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define ll long long
+
+int main(void){
+    int n;
+    cin >> n;
+
+    while(cin >> n && n){
+        ll even
+    }
+}
+

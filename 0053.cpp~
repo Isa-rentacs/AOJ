@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+
+int p[10000];
+bool isPrime[100000];
+
+int main(void){
+  int pnum=0;
+  //篩
+  fill(isPrime,isPrime+30000,true);
+  for(int i=2;pnum<10000;i++){
+    if(isPrime[i] == true){
+      p[pnum++] = i;
+      for(j=2;i*j<100000;j++){
+	isPrime[j] = false;
+      }
+    }
+  }
+
+  int tmp;
+  while(cin >> tmp){
+    int ret=0;
+    if(!tmp) break;
+    for(int i=0;i<tmp;i++) ret+=p[i];
+    cout << ret << endl;
+  }
+}

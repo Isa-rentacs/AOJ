@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+bool isPrime[60000];
+
+int main(void){
+  fill(isPrime, isPrime+60000, true);
+  for(int i=2;i<60000;i++){
+    if(isPrime[i]){
+      for(int j=1; i*j<60000;j++){
+	isPrime[i*j] = false;
+      }
+    }
+  }
+
+  int n;
+  while(cin >> n){
+    int tmp=1;
+    while(1){
+      if(isPrime[n-tmp] == true){
+	cout << n-tmp;
+      }
+      tmp--;
+    }
+
+    tmp = 1;
+    while(1){
+      if(isPrime[n+tmp] == true){
+	cout << n+tmp;
+      }
+      tmp++;
+    }
+  }
+  return 0;
+}

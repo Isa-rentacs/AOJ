@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main(void){
+  int length;
+  vector<int> r;
+
+  
+}
