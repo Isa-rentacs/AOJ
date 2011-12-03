@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(void){
+  int n;
+
+  while(cin >> n && n){
+    int l;
+    int pos=0;
+    int cnt=0;
+    int ret=0;
+    string str;
+    cin >> l;
+    cin >> str;
+    while(pos < l-2){
+      if(str[pos] == 'O'){
+	pos++;
+      }else{
+	if(str[pos+1] == 'O' && str[pos+2] == 'I'){
+	  pos += 2;
+	  cnt++;
+	}else{
+	  if(cnt > 0){
+	    if(cnt >= n){
+	      ret += cnt-n+1
+	    }
+	  }
+	  pos++;
+	}
+      }
+    }
+
+  }
+}

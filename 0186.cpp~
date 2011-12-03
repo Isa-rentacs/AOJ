@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int q1,q2,badget,c1,c2,lower,upper,mid;
+
+int main(){
+
+  while(cin >> q1 && q1){
+    cin >> q2 >> badget >> c1 >> c2;
+    lower = 0;
+    upper = 1000000;
+
+    //binary search
+    while(upper - lower > 1){
+      mid = (upper + lower) / 2;
+      if(s(mid)){
+	lower = mid;
+      }else{
+	upper = mid;
+      }
+    }
+  }
+}

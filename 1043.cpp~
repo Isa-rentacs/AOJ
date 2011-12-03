@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+class team{
+
+};
+
+int main(void){
+  int n;
+  while(cin >> n && n){
+    
+  }
+}

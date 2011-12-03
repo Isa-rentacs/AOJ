@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+class DICE{
+public:
+  DICE(int a, int b, int c, int d, int e, int f){
+    val[0] = a;
+    val[1] = b;
+    val[2] = c;
+    val[3] = d;
+    val[4] = e;
+    val[5] = f;
+  }
+  int val[6];
+
+};

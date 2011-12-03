@@ -1,0 +1,16 @@
+#include <iostream>
+#include <algorithm>
+
+#define MAX_SEC 15
+#define MAX_STATE 1 << 9
+
+using namespace std;
+
+double dp[MAX_SEC+1][MAX_STATE][9];
+
+int main(void){
+  int n;
+  while(cin >> n && n){
+    fill((double *)dp, (double *)dp+(MAX_SEC+1)*MAX_STATE*9, 0);
+  }
+}
