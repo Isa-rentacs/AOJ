@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int q1,badget,c1,c2,lower,upper,mid,lim;

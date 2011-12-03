@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 
 using namespace std;
 
@@ -21,4 +22,22 @@ int main(){
       }
     }
   }
+=======
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    int q1;
+    
+    while(cin >> q1){
+        int badget, pi, pn, lim;
+        int reti, retn;
+        cin >> badget >> pi >> pn >> lim;
+        
+        if(pi*q1 <= badget){
+
+        }
+    }
+>>>>>>> 221bea18373c5abcff1b89e8356019a4846ef031
 }
