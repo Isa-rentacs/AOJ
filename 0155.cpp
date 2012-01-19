@@ -24,10 +24,10 @@ struct Edge{
 
 struct Node{
     int index;
-    int cost;
+    Weight cost;
     int prev;
 
-    Node(int index, int cost, int prev) :
+    Node(int index, Weight cost, int prev) :
         index(index), cost(cost), prev(prev){ }
 };
 
@@ -39,7 +39,7 @@ bool operator <(const Node &a, const Node &b){
     }
 }
 
-void dijkstra(int s, vector<int> &costs, vector<int> &prev, vector<vector<Edge> > &edges){
+void dijkstra(int s, vector<Weight> &costs, vector<int> &prev, vector<vector<Edge> > &edges){
     int n=costs.size();
     priority_queue<Node> q;
 
@@ -90,7 +90,7 @@ int main(){
     int n;
     while(cin >> n && n){
         vector<vector<Edge> > edges(n);
-        vector<int> cost(n);
+        vector<Weight> cost(n);
         vector<int> prev(n);
         vector<int> name(n);
         vector<building> b;
