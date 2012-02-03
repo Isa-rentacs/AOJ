@@ -90,5 +90,6 @@ int main(){
             }
         }
         if(!isok) cout << "NA" << endl;
+        q.clear();
     }
 }
