@@ -1,8 +1,0 @@
-#include <iostream>
-main(){
-  int a;
-  while(std::cin>>a){
-    if(!a) break;
-    printf("%d\n",1+a*(a+1)/2);
-  }
-}

@@ -1,8 +1,0 @@
-#include <iostream>
-#include <cstdio>
-
-main(){
-  double d;
-  std::cin>>d;
-  printf("%f\n",633*d/81);
-}
