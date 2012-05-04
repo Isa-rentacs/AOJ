@@ -9,6 +9,8 @@ using namespace std;
 
 char f[12][6];
 bool checked[12][6];
+int dx[4] = {0,-1,0,1};
+int dy[4] = {1,0,-1,0};
 
 int checkfrom(int i, int j){
     pair<int,int> tmp;
@@ -16,8 +18,6 @@ int checkfrom(int i, int j){
     vector<pair<int,int> > modi;
     int cnt = 0,nx,ny;
     char color = f[i][j];
-    int dx[4] = {0,-1,0,1};
-    int dy[4] = {1,0,-1,0};
 
     q.push_back(make_pair(i,j));
     checked[i][j] = true;
@@ -52,10 +52,8 @@ int checkfrom(int i, int j){
 }
 
 int main(){
-	cin.tie(0);
-	ios_base::sync_with_stdio(false);
     int n;
-    cin >> n;
+    scanf("%d", &n);
 
 
 
@@ -64,15 +62,15 @@ int main(){
 
         for(int i=0;i<12;i++){
             for(int j=0;j<6;j++){
-                cin >> f[i][j];
+                scanf(" %c", &f[i][j]);
             }
         }
         int max_deleted = 0;
-        int res = 0;
+        int res = 0,tx,ty;
         while(1){
             max_deleted = 0;
             memset(checked, false, sizeof(checked));
-            for(int i=0;i<12;i++){
+            for(int i=11;i>=0;i--){
                 for(int j=0;j<6;j++){
                     if(f[i][j] != '.' && f[i][j] != 'O' && !checked[i][j]){
                         max_deleted = max(checkfrom(i, j), max_deleted);
@@ -93,7 +91,7 @@ int main(){
                 }
             }
             
-            if(!max_deleted) break;
+            if(max_deleted < 4) break;
             res++;
         }
         cout << res << endl;

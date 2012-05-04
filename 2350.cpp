@@ -29,7 +29,6 @@ int main(){
     cin >> a >> b >> k;
 
     int n = log10(a) + 1;
-
     for(int i=0;i<(1 << n);i++){
         if(bitcount(i) <= k){
             tmp = 0;
