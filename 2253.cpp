@@ -1,39 +1,63 @@
 #include <iostream>
 #include <cstring>
-#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-//[-30,30] -> [1,61]
-bool counted[62][62];
-bool dp[2][62][62];
-bool obj[62][62];
+//[-60,60] -> [0,120]
+int f[121][121];
 
-int dx[6] = {1,1,0,-1,-1,0}
+int dx[6] = {1,1,0,-1,-1,0};
+int dy[6] = {0,1,1,0,-1,-1};
 
 int main(){
-    int t, n;
-
+    int t,n;
+    
     while(cin >> t >> n){
-        memset(counted, false, sizeof(counted));
-        memset(dp, false, sizeof(dp));
-        memset(obj, false, sizeof(obj));
+        if((t|n) == 0) break;
+        memset(f,0,sizeof(f));
         int x,y;
+        vector<pair<int,int> > diff;
 
         for(int i=0;i<n;i++){
             cin >> x >> y;
-            x += 31;
-            y += 31;
-            obj[x][y] = true;
+            f[x+60][y+60] = -1;
         }
-        int cur=0,nxt=1;
-        cin >> x >> y;
-        x += 31;
-        y += 31;
-        counted[x][y] = true;
-        dp[cur][x][y] = true;
-        for(int i=0;i<t;i++){
 
+        cin >> x >> y;
+        x += 60;
+        y += 60;
+        f[x][y] = 1;
+        
+        for(int i=0;i<t;i++){
+            for(int p=0;p<121;p++){
+                for(int q=0;q<121;q++){
+                    if(f[p][q] == 1){
+                        for(int k=0;k<6;k++){
+                            x = p + dx[k];
+                            y = q + dy[k];
+
+                            if(0 <= x && x < 121 &&
+                               0 <= y && y < 121 &&
+                                f[x][y] != -1){
+                                diff.push_back(make_pair(x,y));
+                            }
+                        }
+                    }
+                }
+            }
+            for(int j=0;j<diff.size();j++){
+                f[diff[j].first][diff[j].second] = 1;
+            }
+            diff.clear();
         }
+        int ret = 0;
+
+        for(int i=0;i<121;i++){
+            for(int j=0;j<121;j++){
+                if(f[i][j] == 1) ret++;
+            }
+        }
+        cout << ret << endl;
     }
 }
